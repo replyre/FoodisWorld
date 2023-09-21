@@ -3,6 +3,7 @@ import { IoMdClose } from "react-icons/io";
 import ItemCard from "./ItemCard";
 import { useSelector } from "react-redux";
 import { FaShoppingCart } from "react-icons/fa";
+import { TbShoppingCartOff } from "react-icons/tb";
 
 const Cart = () => {
   const [activeCart, setActiveCart] = useState(true);
@@ -25,11 +26,16 @@ const Cart = () => {
             className="border-2 border-gray-600 text-gray-600 font-bold text-xl p-1 rounded-md hover:text-red-300 hover:border-red-300 cursor-pointer "
           />
         </div>
-        {cartItems.map((item) => (
-          <ItemCard item={item} key={item.id} />
-        ))}
-        {/* <ItemCard />
-        <ItemCard /> */}
+        {cartItems.length > 0 ? (
+          cartItems.map((item) => (
+            <ItemCard item={item} key={item.id} qty={item.qty} />
+          ))
+        ) : (
+          <h2 className="text-center text-xl font-bold text-red-700 flex justify-center items-center gap-2 ">
+            <TbShoppingCartOff className="text-2xl" /> Empty Cart
+          </h2>
+        )}
+
         <div className="absolute bottom-0 w-[20vw]">
           <h3 className="font-semibold text-gray-800">Items:</h3>
           <h3 className="font-semibold text-gray-800"> total Amount:</h3>
