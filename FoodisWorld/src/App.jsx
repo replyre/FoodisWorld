@@ -7,7 +7,7 @@ import Error from "./pages/Error";
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
+       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="success" element={<Success />} />
         <Route path="/*" element={<Error />} />
