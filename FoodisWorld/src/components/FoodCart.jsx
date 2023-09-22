@@ -2,7 +2,7 @@ import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/CartSlice";
-const FoodCart = ({ item }) => {
+const FoodCart = ({ item, handleToast }) => {
   const dispatch = useDispatch();
   return (
     <div className="font-bold w-[250px] bg-white p-5 flex flex-col justify-between">
@@ -37,6 +37,7 @@ const FoodCart = ({ item }) => {
                 qty: 1,
               })
             );
+            handleToast(item.name);
           }}
         >
           Add to Cart

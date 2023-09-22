@@ -8,6 +8,11 @@ import { TbShoppingCartOff } from "react-icons/tb";
 const Cart = () => {
   const [activeCart, setActiveCart] = useState(true);
   const cartItems = useSelector((state) => state.cart.cart);
+  const totalQty = cartItems.reduce((totalQty, item) => totalQty + item.qty, 0);
+  const totPrice = cartItems.reduce(
+    (totalQty, item) => totalQty + item.qty * item.price,
+    0
+  );
   // console.log(cartItems);
 
   return (
@@ -37,8 +42,10 @@ const Cart = () => {
         )}
 
         <div className="absolute bottom-0 w-[20vw]">
-          <h3 className="font-semibold text-gray-800">Items:</h3>
-          <h3 className="font-semibold text-gray-800"> total Amount:</h3>
+          <h3 className="font-semibold text-gray-800">Items: {totalQty}</h3>
+          <h3 className="font-semibold text-gray-800">
+            Total Amount: {totPrice}
+          </h3>
           <hr className="w-[90vw] lg:w-[18vw] my-2" />
           <button className="bg-green-500 font-bold px-3 text-white py-2 rounded-lg lg:w-[18vw] w-[90vw] mb-5">
             Checkout
@@ -48,7 +55,9 @@ const Cart = () => {
       <div>
         <FaShoppingCart
           onClick={() => setActiveCart(!activeCart)}
-          className="rounded-full bg-white shadow-md text-5xl p-3 fixed bottom-4 right-4 "
+          className={`rounded-full bg-white shadow-md text-5xl p-3 fixed bottom-4 right-4 hover:cursor-pointer hover:bg-slate-100 active:bg-green-200 ${
+            totalQty > 0 && "animate-bounce delay-500 transition-all"
+          }`}
         />
       </div>
     </>
