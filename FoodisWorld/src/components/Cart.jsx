@@ -6,7 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { TbShoppingCartOff } from "react-icons/tb";
 
 const Cart = () => {
-  const [activeCart, setActiveCart] = useState(true);
+  const [activeCart, setActiveCart] = useState(false);
   const cartItems = useSelector((state) => state.cart.cart);
   const totalQty = cartItems.reduce((totalQty, item) => totalQty + item.qty, 0);
   const totPrice = cartItems.reduce(
