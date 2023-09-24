@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Error = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-red-200 h-[100vh] flex flex-col justify-center items-center">
       <p className="text-3xl text-red-600"> Error!</p>
