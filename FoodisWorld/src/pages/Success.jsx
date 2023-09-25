@@ -13,7 +13,7 @@ const Success = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       {loading ? (
-        <PropagateLoader color="#36d7b7" />
+        <PropagateLoader color="#CD201F" />
       ) : (
         <div className="flex flex-col justify-center">
           <h2 className="text-center text-3xl font-semibold mb-2">
@@ -21,7 +21,7 @@ const Success = () => {
           </h2>
           <p>Your order has been successfully placed</p>
           <button
-            className=" bg-green-500 p-2  rounded-md hover:bg-green-400 text-white mt-4 active:scale-95"
+            className=" bg-red-500 p-2  rounded-md hover:bg-red-400 text-white mt-4 active:scale-95"
             onClick={() => {
               navigate("/");
             }}

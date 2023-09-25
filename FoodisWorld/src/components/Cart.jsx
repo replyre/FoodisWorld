@@ -53,7 +53,7 @@ const Cart = () => {
             onClick={() => {
               navigate("/success");
             }}
-            className="bg-green-500 font-bold px-3 text-white py-2 rounded-lg lg:w-[18vw] w-[90vw] mb-5"
+            className="bg-red-500 font-bold px-3 text-white py-2 rounded-lg lg:w-[18vw] w-[90vw] mb-5"
           >
             Checkout
           </button>
@@ -62,7 +62,7 @@ const Cart = () => {
       <div>
         <FaShoppingCart
           onClick={() => setActiveCart(!activeCart)}
-          className={`rounded-full bg-white shadow-md text-5xl p-3 fixed bottom-4 right-4 hover:cursor-pointer hover:bg-slate-100 active:bg-green-200 ${
+          className={`rounded-full bg-white shadow-md text-5xl p-3 fixed bottom-4 right-4 hover:cursor-pointer hover:bg-slate-100 active:bg-red-200 ${
             totalQty > 0 && "animate-bounce delay-500 transition-all"
           }`}
         />

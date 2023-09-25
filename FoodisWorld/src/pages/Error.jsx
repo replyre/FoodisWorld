@@ -8,7 +8,7 @@ const Error = () => {
       <p className="text-3xl text-red-600"> Error!</p>
       <p className="text-xl text-red-700"> Page not found.</p>
       <button
-        className=" bg-green-500 p-2  rounded-md hover:bg-green-400 text-white mt-4 active:scale-95 min-w-[200px]"
+        className=" bg-red-500 p-2  rounded-md hover:bg-red-400 text-white mt-4 active:scale-95 min-w-[200px]"
         onClick={() => {
           navigate("/");
         }}

@@ -14,7 +14,7 @@ const FoodCart = ({ item, handleToast }) => {
 
         <div className="text-sm flex justify-between ">
           <h2 className="w-[150px]">{item.name}</h2>
-          <span className="text-green-500 ">₹ {item.price}</span>
+          <span className="text-red-500 ">₹ {item.price}</span>
         </div>
 
         <p className="text-sm font-normal">{item.desc.split(".")[0]}.</p>
@@ -25,7 +25,7 @@ const FoodCart = ({ item, handleToast }) => {
         </span>
 
         <button
-          className="p-1 text-white bg-green-500 hover:bg-green-600 rounded-lg text-sm "
+          className=" text-white bg-red-500 hover:bg-red-600 rounded-lg text-sm p-2"
           onClick={() => {
             dispatch(
               addToCart({
